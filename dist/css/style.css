@@ -472,6 +472,7 @@ footer .footer-con .social-icon i {
   }
   .navBar .container .hamBurger {
     display: block !important;
+    cursor: pointer;
   }
 
   .home-section .name {
