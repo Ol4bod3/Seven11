@@ -12,25 +12,26 @@ body {
   width: 100%;
   height: 100vh;
 }
-body::-webkit-scrollbar {
-  width: 1em;
-}
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-body::-webkit-scrollbar-thumb {
-  background-color: #f50000;
-  outline: 1px solid rgba(245, 0, 0, 0.952);
+body #loader {
+  width: 100%;
+  height: 100%;
+  z-index: 1002;
+  background-image: url(../../images/preloader.gif);
+  background-size: 100% 100%;
 }
 
 ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 header {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   height: 10vh;
   z-index: 1000;
 }
@@ -67,6 +68,12 @@ header .container nav ul li a {
   font-weight: bold;
   font-size: 1rem;
   color: #fff;
+  padding: 10px;
+}
+header .container nav ul li a:hover {
+  color: #191921;
+  background-color: #fff;
+  border-radius: 20px;
 }
 header .container nav .contact {
   font-size: 1rem;
@@ -75,6 +82,19 @@ header .container nav .contact {
   text-transform: uppercase;
   font-family: "Montserrat";
   font-weight: bold;
+  padding: 10px;
+}
+header .container nav .contact:hover {
+  background-color: #fff;
+  color: #191921;
+  border-radius: 20px;
+}
+header .container .hamBurger {
+  display: none;
+}
+header .container .hamBurger i {
+  color: #fff;
+  font-size: 2rem;
 }
 
 .home-section {
@@ -89,8 +109,8 @@ header .container nav .contact {
   align-items: center;
 }
 .home-section .name {
-  width: 70vh;
-  height: 50vh;
+  width: 70%;
+  height: 50%;
   color: #fff;
   position: relative;
   left: 13%;
@@ -133,7 +153,8 @@ header .container nav .contact {
   color: #fff;
 }
 .home-section .name .btn-con .arrow-right {
-  width: 50px;
+  display: flex;
+  align-items: center;
   padding: 1rem;
   background: #fff;
   color: #191921;
@@ -197,6 +218,8 @@ header .container nav .contact {
   }
 }
 .home-section .social-icon {
+  display: flex;
+  align-items: center;
   height: 30px;
   position: absolute;
   bottom: 4.4rem;
@@ -206,7 +229,7 @@ header .container nav .contact {
 .home-section .social-icon i {
   color: #fff;
   padding-left: 20px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 #gallery-section {
@@ -223,20 +246,16 @@ header .container nav .contact {
 }
 #gallery-section #gallery {
   line-height: 0;
-  -moz-column-count: 5;
-       column-count: 5;
-  -moz-column-gap: 5px;
-       column-gap: 5px;
+  -moz-column-count: 5 !important;
+       column-count: 5 !important;
+  -moz-column-gap: 5px !important;
+       column-gap: 5px !important;
 }
-#gallery-section #gallery img {
-  width: 100% !important;
-  height: auto !important;
-  margin-bottom: 5px;
-  border: 1px solid #fff;
+#gallery-section #gallery a {
   filter: grayscale(100%);
   transition: filter 2s;
 }
-#gallery-section #gallery img:hover {
+#gallery-section #gallery a:hover {
   filter: none;
 }
 
@@ -250,11 +269,11 @@ header .container nav .contact {
 }
 #about .about-container {
   display: flex;
-  width: 80vw;
+  width: 80%;
   margin: 0 auto;
 }
 #about .about-container .img-con {
-  width: 30vw;
+  width: 50%;
   height: 80vh;
   background-color: red;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url("../../images/about.jpg");
@@ -262,7 +281,7 @@ header .container nav .contact {
   background-repeat: no-repeat;
 }
 #about .about-container .text {
-  width: 40vw;
+  width: 50%;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -290,14 +309,15 @@ header .container nav .contact {
 }
 
 #contact {
-  height: 100vh;
+  height: 100%;
   display: flex;
 }
 #contact .contact-form {
-  width: 50%;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 #contact .contact-form .form-con {
   padding-top: 20px;
@@ -316,7 +336,9 @@ header .container nav .contact {
   margin-top: 40px;
 }
 #contact .contact-form .form-con form .input-con {
-  width: 30rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
   padding: 0.7rem;
   margin-top: 10px;
   border-radius: 30px;
@@ -324,19 +346,19 @@ header .container nav .contact {
 }
 #contact .contact-form .form-con form .input-con input {
   border: none;
-  width: 25rem;
+  width: 100%;
   padding-left: 10px;
 }
 #contact .contact-form .form-con form textarea {
   border: none;
-  width: 30rem;
+  width: 100%;
   margin-top: 40px;
   border-bottom: 1px solid #191921;
 }
 #contact .contact-form .form-con form .btn {
   border: none;
-  width: 30rem;
-  color: white;
+  width: 100%;
+  color: #fff;
   padding: 0.7rem;
   margin-top: 40px;
   font-size: 1.2rem;
@@ -346,30 +368,35 @@ header .container nav .contact {
   padding-right: 10px;
 }
 #contact .contact-form .form-con .email {
-  margin-top: 40px;
+  margin: 40px;
 }
 #contact .contact-form .form-con .email p {
   padding: 0.3rem;
 }
 #contact .google-map {
-  width: 50%;
+  width: 100%;
 }
 #contact .google-map iframe {
-  width: 670px;
-  height: 654px;
+  width: 100%;
+  height: 100%;
 }
 
 footer {
   height: 10vh;
   background: #191921;
-  color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 1rem;
+  text-align: center;
+  margin: 0 auto;
 }
-footer .social-icon i {
-  font-size: 1.4rem;
+footer .footer-con {
+  height: 100%;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+footer .footer-con .social-icon i {
+  font-size: 2rem;
   padding-right: 20px;
 }
 
@@ -386,14 +413,177 @@ footer .social-icon i {
   }
 }
 @media (max-width: 800px) {
+  .navBar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .navBar .container {
+    width: 100%;
+    justify-content: space-between !important;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .navBar .container .nav {
+    display: none;
+  }
+  .navBar .container .navOpen {
+    display: block;
+    position: absolute;
+    width: 100vw !important;
+    left: 0;
+    height: 90vh;
+    top: 57px;
+    background-color: #191921;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: all 2s ease;
+  }
+  .navBar .container .navOpen ul {
+    position: relative;
+    top: -14%;
+    flex-direction: column;
+  }
+  .navBar .container .navOpen ul li {
+    list-style: none;
+    margin: 1.5rem;
+  }
+  .navBar .container .navOpen ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+    letter-spacing: 4px;
+  }
+  .navBar .container .navOpen ul li a:hover {
+    background-color: #fff;
+    color: #191921;
+  }
+  .navBar .container .navOpen .contact {
+    position: relative;
+    right: -10px;
+    top: -14%;
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+  .navBar .container .hamBurger {
+    display: block !important;
+  }
+
+  .home-section .name {
+    height: 60%;
+    width: 100%;
+    left: 0;
+    padding-left: 20px;
+  }
+  .home-section .name h2 {
+    font-size: 1rem;
+  }
+  .home-section .name span {
+    font-size: 2rem;
+    letter-spacing: 4px;
+  }
+  .home-section .name h1 {
+    padding-top: 1rem;
+    font-size: 2.5rem;
+  }
+  .home-section .name .btn-con .btn {
+    padding: 0.5rem;
+  }
+  .home-section .name .btn-con .arrow-right {
+    padding: 0.5rem;
+    width: 35px;
+  }
+  .home-section .arrow {
+    display: none;
+  }
+  .home-section .social-icon i {
+    font-size: 2rem;
+  }
+
   #gallery {
-    -moz-column-count: 2;
-         column-count: 2;
+    -moz-column-count: 4;
+         column-count: 4;
+  }
+
+  #about {
+    height: 100vh;
+  }
+  #about .about-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  #about .about-container .img-con {
+    height: 100px;
+    width: 100px;
+    margin: 30px 0;
+    border-radius: 50%;
+    border: 1px solid white;
+    text-align: center;
+  }
+  #about .about-container .text {
+    width: 80% !important;
+    margin-left: 0;
+  }
+  #about .about-container .text h3 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  #about .about-container .text p {
+    font-size: 0.8rem;
+  }
+  #about .about-container .text .bold {
+    font-size: 0.8rem;
+  }
+  #about .about-container .text .bolder {
+    font-size: 1.2rem;
+    padding-top: 40px;
+  }
+
+  #contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  #contact .contact-form {
+    width: 100%;
+    height: 80%;
+  }
+  #contact .contact-form .form-con {
+    width: 90%;
+  }
+  #contact .google-map {
+    height: 20rem;
+  }
+
+  footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  footer .footer-con {
+    width: 90%;
+  }
+  footer .footer-con p {
+    font-size: 0.8rem;
+    margin-right: 15px;
+  }
+  footer .footer-con .social-icon {
+    display: flex;
+  }
+  footer .footer-con .social-icon i {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 400px) {
-  #gallery {
-    -moz-column-count: 1;
-         column-count: 1;
+  .name {
+    width: 100%;
+    height: 70%;
   }
 }/*# sourceMappingURL=style.css.map */

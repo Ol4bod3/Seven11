@@ -5,7 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seven11 Photography</title>
+
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript"></script>
+          
+    <!-- nanogallery2 -->
+    <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+    <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>    
+    
+    <!-- Custom Style -->
     <link rel="stylesheet" href="dist\css\style.css" />
+    
     <!-- FontAwesome link -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
@@ -16,10 +26,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
   </head>
   <body>
+      <div id="loader">
+      </div>
+
     <header class="navBar">
       <div class="container">
         <div class="logo"> <a href="#"><img src="./images/logo.png" alt="logo" /> </a></div>
-        <nav>
+        <nav class="nav ">
           <ul>
             <li><a href="#gallery-section">portfolio</a></li>
             <li><a href="#">family</a></li>
@@ -27,7 +40,11 @@
             <li><a href="#about">about</a></li>
           </ul>
           <a class="contact" href="#contact">contact</a>
+
         </nav>
+        <div class="hamBurger">
+          <i class="fas fa-bars"></i>
+        </div>
       </div>
     </header>
     <main>
@@ -48,7 +65,7 @@
         </div>
         <div class="arrow">
           <p>scroll</p>
-          <span> <i class="fas fa-arrow-down"></i> </span>
+         <a href="#gallery-section"> <span> <i class="fas fa-arrow-down"></i> </span> </a>
         </div>
         <div class="social-icon">
           <i class="fab fa-facebook-square"></i>
@@ -60,46 +77,61 @@
       <!-- Gallley Section -->
       <section id="gallery-section">
         <h2>Portfolio</h2>
-        <div id="gallery">
-          <img src="./images/img-1.jpg" alt="" />
-          <img src="./images/img-2.jpg" alt="" />
-          <img src="./images/img-3.jpg" alt="" />
-          <img src="./images/img-4.jpg" alt="" />
-          <img src="./images/img-5.jpg" alt="" />
-          <img src="./images/img-6.jpg" alt="" />
-          <img src="./images/img-7.jpg" alt="" />
-          <img src="./images/img-8.jpg" alt="" />
-          <img src="./images/img-9.jpg" alt="" />
-          <img src="./images/img-10.jpg" alt="" />
-          <img src="./images/img-11.jpg" alt="" />
-          <img src="./images/img-12.jpg" alt="" />
-          <img src="./images/img-13.jpg" alt="" />
-          <img src="./images/img-14.jpg" alt="" />
-          <img src="./images/img-15.jpg" alt="" />
-          <img src="./images/img-16.jpg" alt="" />
-          <img src="./images/img-18.jpg" alt="" />
-          <img src="./images/img-19.jpg" alt="" />
-          <img src="./images/img-20.jpg" alt="" />
-          <img src="./images/img-21.jpg" alt="" />
-          <img src="./images/img-22.jpg" alt="" />
-          <img src="./images/img-23.jpg" alt="" />
-          <img src="./images/img-24.jpg" alt="" />
-          <img src="./images/img-25.jpg" alt="" />
-          <img src="./images/img-26.jpg" alt="" />
-          <img src="./images/img-27.jpg" alt="" />
-          <img src="./images/img-28.jpg" alt="" />
-          <img src="./images/img-29.jpg" alt="" />
-          <img src="./images/img-30.jpg" alt="" />
-          <img src="./images/img-31.jpg" alt="" />
-          <img src="./images/img-32.jpg" alt="" />
-          <img src="./images/img-33.jpg" alt="" />
-          <img src="./images/img-34.jpg" alt="" />
-          <img src="./images/img-35.jpg" alt="" />
-          <img src="./images/img-36.jpg" alt="" />
-          <img src="./images/img-37.jpg" alt="" />
-          <img src="./images/img-38.jpg" alt="" />
+        <div id="gallery nanogallery2">
+
+          <div id="nanogallery2"
+          data-nanogallery2 = '{
+            "thumbnailHeight":  200,
+            "thumbnailWidth":   "auto",
+            "itemsBaseURL":     "./images/",
+            "thumbnailDisplayTransition":    "scaleUp",
+            "thumbnailDisplayTransitionDuration":  500,  
+            "thumbnailDisplayInterval":   30,
+            "galleryDisplayTransition":            "rotateX",
+            "galleryDisplayTransitionDuration":    500
+          }' >
+
+
+          <a href="img-1.jpg"  data-ngThumb="img-1.jpg"> </a>
+          <a href="img-2.jpg"  data-ngThumb="img-2.jpg"> </a>
+          <a href="img-3.jpg"  data-ngThumb="img-3.jpg"> </a>
+          <a href="img-4.jpg"  data-ngThumb="img-4.jpg"> </a>
+          <a href="img-5.jpg"  data-ngThumb="img-5.jpg"> </a>
+          <a href="img-6.jpg"  data-ngThumb="img-6.jpg" ></a>
+          <a href="img-7.jpg"  data-ngThumb="img-7.jpg"> </a>
+          <a href="img-8.jpg"  data-ngThumb="img-8.jpg"> </a>
+          <a href="img-9.jpg"  data-ngThumb="img-9.jpg"> </a>
+          <a href="img-10.jpg" data-ngThumb="img-10.jpg"></a>
+          <a href="img-11.jpg" data-ngThumb="img-11.jpg"></a>
+          <a href="img-12.jpg" data-ngThumb="img-12.jpg"></a>
+          <a href="img-13.jpg" data-ngThumb="img-13.jpg"></a>
+          <a href="img-14.jpg" data-ngThumb="img-14.jpg"></a>
+          <a href="img-15.jpg" data-ngThumb="img-15.jpg"></a>
+          <a href="img-16.jpg" data-ngThumb="img-16.jpg"></a>
+          <a href="img-18.jpg" data-ngThumb="img-18.jpg"></a>
+          <a href="img-19.jpg" data-ngThumb="img-19.jpg"></a>
+          <a href="img-20.jpg" data-ngThumb="img-20.jpg"></a>
+          <a href="img-21.jpg" data-ngThumb="img-21.jpg"></a>
+          <a href="img-22.jpg" data-ngThumb="img-22.jpg"></a>
+          <a href="img-23.jpg" data-ngThumb="img-23.jpg"></a>
+          <a href="img-24.jpg" data-ngThumb="img-24.jpg"></a>
+          <a href="img-25.jpg" data-ngThumb="img-25.jpg"></a>
+          <a href="img-26.jpg" data-ngThumb="img-26.jpg"></a>
+          <a href="img-27.jpg" data-ngThumb="img-27.jpg"></a>
+          <a href="img-28.jpg" data-ngThumb="img-28.jpg"></a>
+          <a href="img-29.jpg" data-ngThumb="img-29.jpg"></a>
+          <a href="img-30.jpg" data-ngThumb="img-30.jpg"></a>
+          <a href="img-31.jpg" data-ngThumb="img-31.jpg"></a>
+          <a href="img-32.jpg" data-ngThumb="img-32.jpg"></a>
+          <a href="img-33.jpg" data-ngThumb="img-33.jpg"></a>
+          <a href="img-34.jpg" data-ngThumb="img-34.jpg"></a>
+          <a href="img-35.jpg" data-ngThumb="img-35.jpg"></a>
+          <a href="img-36.jpg" data-ngThumb="img-36.jpg"></a>
+          <a href="img-37.jpg" data-ngThumb="img-37.jpg"></a>
+          <a href="img-38.jpg" data-ngThumb="img-38.jpg"></a>
         </div>
       </section>
+      <!-- About Section -->
       <section id="about">
         <div class="about-container">
           <div class="img-con"></div>
@@ -141,7 +173,7 @@
               </div>
               <textarea
                 name="message"
-                cols="90"
+                cols="20"
                 rows="5"
                 placeholder=" Enter your message"
               ></textarea
@@ -169,6 +201,7 @@
     </main>
     <!-- Footer Section -->
     <footer>
+      <div class="footer-con">
       <p>&copy Copyright 2022, Seven11photography. All rights reserved.</p>
       <div class="social-icon">
         <i class="fab fa-facebook-square"></i>
@@ -176,6 +209,7 @@
         <i class="fab fa-twitter-square"></i>
         <i class="fa fa-phone-square"></i>
       </div>
+    </div>
     </footer>
     <script>
       TweenMax.to("nav", 2, {
