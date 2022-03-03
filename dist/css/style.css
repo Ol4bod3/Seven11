@@ -110,10 +110,11 @@ header .container .hamBurger i {
 }
 .home-section .name {
   width: 70%;
-  height: 50%;
+  height: 100%;
   color: #fff;
   position: relative;
   left: 13%;
+  top: 15%;
 }
 .home-section .name h2,
 .home-section .name span,
