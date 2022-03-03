@@ -118,7 +118,7 @@ header {
     color: #fff;
     position: relative;
     left: 13%;
-    top: 15%;
+    top: 30%;
     h2,
     span,
     h1 {
@@ -398,6 +398,11 @@ footer {
   }
 }
 @media (max-width: 1200px) {
+  .home-section {
+    .name {
+      top: 15%;
+    }
+  }
   // Gallery section
   #gallery {
     column-count: 4;

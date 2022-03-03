@@ -114,7 +114,7 @@ header .container .hamBurger i {
   color: #fff;
   position: relative;
   left: 13%;
-  top: 15%;
+  top: 30%;
 }
 .home-section .name h2,
 .home-section .name span,
@@ -402,6 +402,10 @@ footer .footer-con .social-icon i {
 }
 
 @media (max-width: 1200px) {
+  .home-section .name {
+    top: 15%;
+  }
+
   #gallery {
     -moz-column-count: 4;
          column-count: 4;
